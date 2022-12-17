@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 //~https://www.youtube.com/watch?v=3iEwhSSz73o&ab_channel=CodingPalsFoundation
 //i'll create a function that calculates if it is possible to traverse every single house only with the given length of the hose.   
