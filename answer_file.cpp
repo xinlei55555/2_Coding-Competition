@@ -1,7 +1,53 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define debug(x) cout<<#x<<" "<<x;
+int test(int hi){
+    int arr[3];
+    cin>>arr[1]>>arr[2]>>arr[3];
+    for(auto x:arr) cout<<x<<" ";
+    //cout<<hi<<" ";
+    if(hi>4) {cout<<hi;return hi;}
+    else test(hi+1);
+}
 int main(){
-    cout<<"*";
+    // string s;
+    // int sum;
+    // int ans=0;
+    // for(int i=2000;i<=2023; i++){
+    //     sum=0;s=to_string(i);  
+    //     for(auto x:s)sum+=x-'0';
+    //     if(i%sum==0) {cout<<i;ans++;}
+    // }
+    // debug(ans);
+    // set<int> m31={1,3,5,7,8,10,12};
+    // set<int> m30={4,6,9,11};
+    // int lim;
+    // ans=0;
+    // for(int i=2011;i<10000; i++){
+    //     for(int j=1;j<=12;j++){
+    //         if(j==2) lim=28;
+    //         else if(m31.find(j)!=m31.end()) lim=31;
+    //         else lim=30;
+    //         for(int k=1; k<=lim;k++){
+    //             if(i==k*100+j) {ans++; cout<<i<<" "; }
+    //         }
+    //     }
+    // }
+    // cout<<"\n";
+    int volume;
+    string vl;
+    for(int i=0;i<1000; i++){
+        volume=i*i*i;
+        vl=to_string(volume);
+        if(vl[1]=='7'&&vl[3]=='7'&&vl[5]=='7'){
+            cout<<i<<" ";
+        }
+    }
+    
+    //cout<<"*";
+    //int a;
+    //debug(a)
+    // cout<<test(0);
     return 0;
 }
 
