@@ -9,7 +9,18 @@ int test(int hi){
     if(hi>4) {cout<<hi;return hi;}
     else test(hi+1);
 }
+struct Test{
+    int hi;
+    int hello;
+};
 int main(){
+    int x = max({1,2,3,4});
+    cout<<x<<"\n";
+    unordered_set<int> hi = {1,2,3,4,5,6787,345,2462,24525,24634};
+    cout<<"HI";
+    for(auto &x:hi) hi.erase(2);
+    cout<<hi.size(); 
+
     // string s;
     // int sum;
     // int ans=0;
@@ -35,14 +46,14 @@ int main(){
     // }
     // cout<<"\n";
     int volume;
-    string vl;
-    for(int i=0;i<1000; i++){
-        volume=i*i*i;
-        vl=to_string(volume);
-        if(vl[1]=='7'&&vl[3]=='7'&&vl[5]=='7'){
-            cout<<i<<" ";
-        }
-    }
+    // string vl;
+    // for(int i=0;i<1000; i++){
+    //     volume=i*i*i;
+    //     vl=to_string(volume);
+    //     if(vl[1]=='7'&&vl[3]=='7'&&vl[5]=='7'){
+    //         cout<<i<<" ";
+    //     }
+    // }
     
     //cout<<"*";
     //int a;

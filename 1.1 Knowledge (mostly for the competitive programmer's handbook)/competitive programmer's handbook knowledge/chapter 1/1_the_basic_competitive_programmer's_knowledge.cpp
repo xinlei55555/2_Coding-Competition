@@ -1,3 +1,5 @@
+//!random websites with tricks for competitive programming
+    //~https://www.geeksforgeeks.org/c-tricks-competitive-programming-c-11/
 //includes all the libraries possible in c++!
 #include <bits/stdc++.h>
 

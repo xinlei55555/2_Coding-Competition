@@ -1,4 +1,8 @@
 //page 23 of the programmer's handbook
+//note, here is a way to get the maximum out of three or more values using {}:
+// int x = max({1,2,3});
+// cout<<x<<"\n";
+
 #include<bits/stdc++.h>
 
 using namespace std;
