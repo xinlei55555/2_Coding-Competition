@@ -26,6 +26,26 @@ int main(){
     //prints 0
 
 //!inserting can also be done more efficiently, check out the links below, but you can also use mp.insert({1, 1}); to insert a pair <int, int> (1,1)
+    
+    //*another way to insert
+    unordered_map<int,int> pref;
+    cin>>pref[0];
+    //I just realized that in any unordered_map, the element at every other key starts at 0???
+        //I don't need to do the if(exists...) pref[skdlfsdlk]++; else pref.insert({key, value});
+        //I could just do pref[klsfjdl]++;
+    cout<<pref[2]<<endl; //output 0
+    pref[2]++;
+    cout<<pref[2]<<endl; //output 1
+    pref[2]=5;
+    cout<<pref[2]<<endl; //output 5
+
+    unordered_map<string, string> hi;
+    hi["hello"]="hi";
+    cout<<hi["hello"]<<endl; //ouputs "hi"
+    cout<<hi["unknown"]<<endl; //outputs an empty space    
+    
+
+
     //also can insert more than one pair of elements using mp.insert({{1,1}, {2,2}})
     mp.insert({{'O',1}, {'P',2}});
     cout<<mp['O'];

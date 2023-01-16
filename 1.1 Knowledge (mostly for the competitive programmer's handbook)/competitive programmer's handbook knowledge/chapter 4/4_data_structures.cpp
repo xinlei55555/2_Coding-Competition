@@ -69,6 +69,15 @@ int main(){
     vector<int>b={1,2,3};
     cout<<(b==a);
 
+    //*replacing all values of a vector by a certain value 
+    std::vector<int> myVector(10);
+    myVector.assign(myVector.size(),5);  // set all values to 5
+
+    //*replacing only a certain range of values of a vector by a certain value
+    fill(myVector.begin(), myVector.end(), 5);  // set all values to 5
+
+    //*resizing a vector (where 5 is the size of the vector)
+    myVector.resize(5);
 
     //you can also use the funciton isupper() and islower() to determine IF the letter is actually downwards of capital 
    //this function will return a non-zero value (not necessarily 0) if the char is indeed lower or upper case letter, else, it will return 0 (false) 

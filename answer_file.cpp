@@ -1,25 +1,62 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define debug(x) cout<<#x<<" "<<x;
-int test(int hi){
-    int arr[3];
-    cin>>arr[1]>>arr[2]>>arr[3];
-    for(auto x:arr) cout<<x<<" ";
-    //cout<<hi<<" ";
-    if(hi>4) {cout<<hi;return hi;}
-    else test(hi+1);
-}
-struct Test{
-    int hi;
-    int hello;
-};
+
+vector<vector<int>> all_sets={{}};
+// vector<int> generating(vector<int>& ans, int curr){
+    
+    
+// }
 int main(){
-    int x = max({1,2,3,4});
-    cout<<x<<"\n";
-    unordered_set<int> hi = {1,2,3,4,5,6787,345,2462,24525,24634};
-    cout<<"HI";
-    for(auto &x:hi) hi.erase(2);
-    cout<<hi.size(); 
+    int i,n; //cin>>n;
+    vector<int> arr={1,2,3,4,5,6,788,1213};
+
+    arr.resize(5);
+    for(auto x:arr) cout<<x;
+
+    // for(i=0;i<n;i++){
+    //     cin>>arr[i];
+    // }
+    
+    auto x=upper_bound(arr.begin(), arr.end(), 1213);
+    i= distance(arr.begin(),x);
+    debug(i) //8
+    bool val= x==arr.end();
+    debug(val) // true, the value of x is arr.end()
+
+    x=lower_bound(arr.begin(), arr.end(), 0);
+    i=distance(arr.begin(),x);
+    debug(i) //0
+    val= x==arr.end();
+    debug(val) //0 (false)
+    return 0;
+}
+// int test(int hi){
+//     int arr[3];
+//     cin>>arr[1]>>arr[2]>>arr[3];
+//     for(auto x:arr) cout<<x<<" ";
+//     //cout<<hi<<" ";
+//     if(hi>4) {cout<<hi;return hi;}
+//     else test(hi+1);
+// }
+// struct Test{
+//     int hi;
+//     int hello;
+// };
+
+// int main(){
+//     unordered_map<int, int> hi;
+//     hi[1]++;
+//     cout<<hi[1];
+//     unordered_map<long long, long long> hello;
+//     hello[1]++;
+//     cout<<hello[1];
+    // int x = max({1,2,3,4});
+    // cout<<x<<"\n";
+    // unordered_set<int> hi = {1,2,3,4,5,6787,345,2462,24525,24634};
+    // cout<<"HI";
+    // for(auto &x:hi) hi.erase(2);
+    // cout<<hi.size(); 
 
     // string s;
     // int sum;
@@ -45,7 +82,7 @@ int main(){
     //     }
     // }
     // cout<<"\n";
-    int volume;
+    // int volume;
     // string vl;
     // for(int i=0;i<1000; i++){
     //     volume=i*i*i;
@@ -59,8 +96,8 @@ int main(){
     //int a;
     //debug(a)
     // cout<<test(0);
-    return 0;
-}
+//     return 0;
+// }
 
 
 
