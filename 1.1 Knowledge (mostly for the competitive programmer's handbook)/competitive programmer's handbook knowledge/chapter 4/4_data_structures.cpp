@@ -72,16 +72,46 @@ int main(){
     //*replacing all values of a vector by a certain value 
     std::vector<int> myVector(10);
     myVector.assign(myVector.size(),5);  // set all values to 5
+    vector<int> a = {1,2,3,4,5,5,6,6};
+    vector<int> b ;
+    b.assign(a.begin(), a.begin()+5); //assign the values 0 to 5 to the values in the first vector;
+    for(auto x: b) cout<<"x "<<x; 
+ /*
+ In C++, the assign() function is a member function of the string and vector class that assigns new values to the object. The function takes one or more arguments, depending on the version used.
+
+For string class:
+
+assign(const string& str): Replaces the current value of the string with a copy of the argument.
+assign(const char* s): Replaces the current value of the string with a copy of the null-terminated character array pointed to by s.
+assign(size_type count, char ch): Replaces the current value of the string with count copies of the character ch.
+assign(InputIterator first, InputIterator last): Replaces the current value of the string with the values in the range [first, last).
+
+For vector class:
+
+assign(InputIterator first, InputIterator last): Replaces the elements in the vector with the elements in the range [first, last).
+assign(size_type count, const T& value): Replaces the elements in the vector with count copies of the value.
+ */  
 
     //*replacing only a certain range of values of a vector by a certain value
     fill(myVector.begin(), myVector.end(), 5);  // set all values to 5
 
-    //*resizing a vector (where 5 is the size of the vector)
-    myVector.resize(5);
+    //*resizing a vector (where 5 is the size of the vector and 0 is the value of all NEW elements (not OLD))
+    myVector.resize(5, 0);
 
     //you can also use the funciton isupper() and islower() to determine IF the letter is actually downwards of capital 
    //this function will return a non-zero value (not necessarily 0) if the char is indeed lower or upper case letter, else, it will return 0 (false) 
+//!string
+    //*creating a substring of a string
+    string s="laksjfdlkajdfs";
+        //~substr(first_index, number_of_elements);
+    string hi=s.substr(3, 5);
+
+    //*erasing a character in a string
+        //Erase takes in the first element, and the number of elements, NOT THE LAST ELEMENT (like in a vector)
+    s.erase(3, 5);
+
 //!sets are rarely used, unless if the performance counts... (because the elements are always sorted.) and can thus find the values at O(logn) speed
+
 /*
 Storing order – The set stores the elements in sorted order.
 Values Characteristics – All the elements in a set have unique values.
@@ -166,9 +196,9 @@ cout<<"-----------------------\n";
         //ex: sizeof(array)/sizeof(int)
 
     int array[] ={123234,24,1354134,14,123,41,4,14,31,4,124,1,5,135,1,5,13,54123,4};
-    sort(array, (array+sizeof(array)));
-    reverse(array, (array+sizeof(array)));
-    random_shuffle(array, (array+sizeof(array)));
+    sort(array, (array+sizeof(array)/sizeof(int)));
+    reverse(array, (array+sizeof(array)/sizeof(int)));
+    random_shuffle(array, (array+sizeof(array)/sizeof(int)));
 
     //the element which the iteator points can be accessed by
     //      *itr
