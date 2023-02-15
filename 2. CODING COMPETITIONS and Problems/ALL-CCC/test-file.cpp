@@ -1,7 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
+#define debug(x) cerr<<#x<<" "<<x<<"\n";
 int main(){
-
+    
     string s="hi";
     s+='o';
     cout<<s;
