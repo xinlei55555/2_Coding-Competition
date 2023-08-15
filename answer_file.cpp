@@ -1,13 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
 #define debug(x) cout<<#x<<" "<<x;
-
+typedef long long ll;
 vector<vector<int>> all_sets={{}};
 // vector<int> generating(vector<int>& ans, int curr){
-    
+
+int main(){
+    unordered_map<string, ll> mp={{"hi", 1}};
+    cout<<mp["hello"];
+}
     
 // }
-int main(){
+int main2(){
     int i,n; //cin>>n;
     vector<int> arr={1,2,3,4,5,6,788,1213};
 

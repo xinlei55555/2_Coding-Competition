@@ -40,7 +40,7 @@ int main(){
             cin>>a[i];
             //if the previous position was the second, the alternating person must take the move.
             if(pos==2){
-                if(a[i]==1 && !f) {skip++;f=true; pos=1;debug(skip)}
+                if(a[i]==1 && !f) {skip++;f=true; pos=1;}
                 if(a[i]==1 && f){pos=1; f=false;}
                 if(a[i]!=1 && f){pos=1; f=false;}
                 if(a[i]!=1 && !f) {pos=1; f=true;}
