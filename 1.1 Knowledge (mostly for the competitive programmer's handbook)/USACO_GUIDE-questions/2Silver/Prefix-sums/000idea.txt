@@ -1,0 +1,2 @@
+nice website explaining the prefix sum:
+https://archive.mcpt.ca/cpt-lessons/advanced/2d-prefix-sum-array/#:~:text=2D%20Prefix%20Sum%20Array%201%202D%20Prefix%20Sum,Contest%201%20P5%20-%20Lelei%20and%20Dragon%20Scales

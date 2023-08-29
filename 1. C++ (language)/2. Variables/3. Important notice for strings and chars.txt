@@ -1,0 +1,3 @@
+strings use " "
+chars use ' '
+DO NOT MIX UP!

@@ -1,0 +1,1 @@
+https://www.tutorialspoint.com/returning-multiple-values-from-a-cplusplus-function#:~:text=In%20C%20or%20C%2B%2B%2C%20we%20cannot%20return%20multiple,and%20the%20function%20will%20take%20pointer%20type%20data.

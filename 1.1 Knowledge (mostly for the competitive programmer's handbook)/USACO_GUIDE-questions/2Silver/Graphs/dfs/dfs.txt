@@ -1,0 +1,13 @@
+adjacency list trick:
+An adjacency list is a data structure that can be used to represent a graph, where each vertex in the graph is represented by a list of its neighboring vertices. When implementing an adjacency list, a common choice for the data structure used to represent the list of neighboring vertices is either a vector or a map.
+
+Using a vector has some advantages over using a map:
+
+Memory efficiency: A vector takes up less memory than a map, since it does not need to store key-value pairs. In an adjacency list, the keys are the vertices themselves, and the values are the neighboring vertices, which can be stored more efficiently in a vector.
+Constant time access: Accessing an element in a vector is done in constant time, O(1) while accessing an element in a map is done in logarithmic time, O(log(n))
+Cache efficiency: Vector elements are stored in a contiguous block of memory, which can lead to better cache efficiency when iterating through the list of neighbors.
+However, using a map has some advantages too:
+
+Automatically sorted: Maps are automatically sorted by key, so the vertices in the adjacency list will be sorted by their label.
+Handles missing vertices: If a vertex is not present in the map, it will return an iterator pointing to the end of the map. With a vector, you would need to check if the index is within bounds.
+In general, if you need to keep the vertices sorted and handle missing vertices, you may want to use a map. But if memory and cache efficiency are more important to you, and you can guarantee that all vertices will be present in the graph, a vector might be a better choice.
