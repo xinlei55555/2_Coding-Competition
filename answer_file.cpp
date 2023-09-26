@@ -5,9 +5,15 @@ typedef long long ll;
 vector<vector<int>> all_sets={{}};
 // vector<int> generating(vector<int>& ans, int curr){
 
-int main(){
+int main12(){
+	cout<<-5%3<<"\n";
+	return 0;
+}
+	
+int main1(){
     unordered_map<string, ll> mp={{"hi", 1}};
     cout<<mp["hello"];
+    return 0;
 }
     
 // }

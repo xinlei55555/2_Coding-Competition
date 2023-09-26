@@ -19,12 +19,15 @@ using namespace std;
 int main(){
     cout<<"hello \n";
     int a = 0;
-    int b = &a;//int *b=&a also seems to work and do the same...
+    //int *b; means that b is a pointer
+    //&a is the pointer that to the value of a.	
+    int* b = &a;//int b=&a works (only on vscode compiler)...
     cout<<b<<endl; //returns a memory adress
 
     cout<<*b<<endl;//returns the value of the memory adress (0)
 
     int& c = a; //we are declaring c as a reference to a!!
+		//this means that c will change as a changes (in the same way)
     cout<<c<<endl; //returns 0
 
     a = 5;
@@ -34,6 +37,14 @@ int main(){
     cout<<value<<endl;//returns memory adress
     cout<<*value<<endl;//returns 0;
 
-
+	int arr[5]={1,2,3,4,5};
+	//looping through arrays.
+	//declare a pointer the first element
+	for(int *it = &arr[0]; it<=&arr[4]; it++){
+		//important: it++ => it+(1*sizeof(type)), it increments by datatype!
+		cout<<*it<<"\n";
+	}	
+	for(int *it=arr; *it; it++){ cout<<*it<<" "<<it<<" ";}	
+	//*the loop will continue until *it (value of it) become false
     return 0;
 }

@@ -1,6 +1,9 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+//it was a prefix sum...., then you would just go and update from top to down, and check if odd or even
+
+
 int main(){
     int t; cin>>t;
     while(t--){

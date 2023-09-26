@@ -9,10 +9,34 @@ Then, we iterate over all values of the map and check how many unordered pairs
 we can build with the number of values of $i$ that have the same value of $p_i-i$
 
 */
+//!codeforce doesn't care about cerr
 #include <bits/stdc++.h>
 using namespace std;
+
+typedef long long ll;
 int main(){
-    
+    int t;
+    cin>>t;
+    while(t--){
+        ll n; cin>>n;
+        vector<ll> arr(n+1, 0); char val;
+        for(int i=1;i<=n;i++) {cin>>val; arr[i]=(val-'0')+arr[i-1];}
+
+        ll first=0, second=1, answer=0;
+        
+            //if(arr[second]-arr[first] == second-first)//
+            //if you reorder, it becomes arr[second]-second == arr[first]-first;
+        unordered_map<ll, ll> sum_dist;
+        for(int i=0;i<=n;i++){
+            sum_dist[arr[i]-i]++;
+        }
+        ll ans=0;
+        for(auto it=sum_dist.begin();it!=sum_dist.end();it++){
+            //!OMg THIS IS COMBINATORIcs --> n choose 2
+             ans+=((it->second)*((it->second)-1)/2);cerr<<it->first<<" "<<it->second<<" | ";
+        }
+        cout<<ans<<"\n";cerr<<"\n";
+    } 
     return 0;
 }
 
