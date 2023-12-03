@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+//!!! great website that contains nifty hacks with bitwise : http://www.graphics.stanford.edu/~seander/bithacks.html
 
 using namespace std;
 
