@@ -42,6 +42,7 @@ int main(){
     while(tc--){
         cin>>n>>P>>l>>t;
         // numpr = ceil(n/7); don't use floats.
+        //another way to do ceil is to add (n+(k-1)/k) where n is an int.
         numpr = (n%7==0)? n/7:n/7+1;
         points = 0;
 
