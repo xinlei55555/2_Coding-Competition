@@ -4,6 +4,7 @@ using namespace std;
 typedef long long ll;
 #define debug(x) cerr<<#x<<" "<<x<<"\n";
 
+//!!! always start by thinking case by case, greedy.
 
 // int main(){
 //     int n; cin>>n; 
