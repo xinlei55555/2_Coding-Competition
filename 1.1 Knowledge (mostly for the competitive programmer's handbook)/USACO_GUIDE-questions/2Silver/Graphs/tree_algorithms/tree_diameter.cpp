@@ -3,74 +3,66 @@ using namespace std;
 typedef long long ll;
 #define debug(x) cerr<<#x<<" "<<x<<"\n";
 
-unordered_map<ll, vector<ll>> tree; vector<bool> vis;
+// two things.  
+unordered_map<ll, vector<ll>> tree; 
 
+// instead of saving the "visited value", I can use that as the maximum value of the given height.
+// just like in the surjection in the CSC240 exam...
+vector<ll> vis;
 
-pair<ll, ll> traverse(ll node, ll depth){
-    //answer represents the <max depth, node value>
-    vis[node] = true;
-    // depth += 1;
-    pair<ll, ll> answer = {depth + 1, node};
-
-    // cerr<<answer.first<<" " <<answer.second<<"\n";
-    for(auto x: tree[node]){
-        if(!vis[x]){    
-            pair<ll, ll> tmp = traverse(x, depth);
-            answer = (tmp.first>answer.first)? tmp: answer;
+void dfs(ll node){
+    for(ll n: tree[node]){
+        // update the value of the position in the list
+        if(vis[n] == -1){
+            vis[n] = vis[node] + 1;
+            dfs(n);
         }
-        // if (answer.first == tmp){
-        //     answer.second = node             
-        // } 
     }
-    return answer;
 }
 
 int main(){
-    ll n; cin>>n;
-    for(int i=0;i<n-1;i++){
-        ll a, b;
+    ll n, a, b;
+    cin>>n;
+    for(int i=0;i<n;i++){
         cin>>a>>b;
-        if (tree.find(a) != tree.end()){
-            tree[a].push_back(b);
+        if(tree.find(a) != tree.end()){
+            tree.insert({a, {}});
         }
-        else{
-            tree[a] = {b};
+        if(tree.find(b) != tree.end()){
+            tree.insert({b, {}});
         }
-        
-        if (tree.find(b) != tree.end()){
-            tree[b].push_back(a);
-        }
-        else{
-            tree[b] = {a};
+        tree[b].push_back(a);
+        tree[a].push_back(b);
+    }
+    vis.assign(n+1, -1);
+
+    vis[1] = 1;
+    dfs(1);
+
+    // then, find the maximum in the list between 1 and n.
+    ll x = 0, idx = 1;
+    for(int i=1;i<=n;i++){
+        x = max(x, vis[i]); 
+        if(x == vis[i]){
+            idx = i;
         }
     }
     
-    // for(auto it: tree){
-    // debug(it.first)
-    // for(auto x: it.second){
-    //     cerr<<x<<" \n";
-    // }}
-    // map<ll, vector<ll>>::iterator it = tree.begin();
-    // while (it != tree.end()){
-    //    debug(it->first);
-    //    for(auto y: it->second){
-    //         cout<<y<<" ";
-    //    }
-    //    it++;
-    // }
-    
 
-    //traversing the subtree: 
-    //hum, i NEED TO FIND the root, then traverse to the longest depth, and then, traverse again for the final answer.
-    //I will just assume that 1 is the root. 
-    pair<ll, ll> longest, answer;
-    // fill(vis.begin(), vs.end(), 0);
-    vis = vector<bool> (n, false);
-    longest = traverse(1, 1);
-    cerr<<longest.first<<" " <<longest.second<<"\n";
+    // then reassign, and restart the dfs.
+    vis.assign(n+1, -1);
+    vis[idx] = 0;
+    debug(idx)
 
-    vis = vector<bool> (n, false);
-    answer = traverse(longest.second, 1);
-    cout<<answer.second<<"\n";
+    dfs(idx);
+    x = 0, idx = 1;
+    for(int i=1;i<=n;i++){
+        x = max(x, vis[i]); 
+        if(x == vis[i]){
+            idx = i;
+        }
+    }
+    // for(auto elmn: vis){debug(elmn)}
+    cout<<vis[idx]<<"\n";
     return 0;
 }
