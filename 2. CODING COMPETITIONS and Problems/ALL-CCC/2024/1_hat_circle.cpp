@@ -18,3 +18,5 @@ int main(){
     cout<<answer * 2;
     return 0;
 }
+
+// took 5 minutes
